@@ -1,0 +1,145 @@
+{
+  "season": "Hot Sale 2026",
+  "products": [
+    {
+      "id": "Perfume versage-eau-de-toilette",
+      "title": "Perfume versage-eau-de-toilette",
+      "slug": "kit-ajolote-cumple",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/f_auto,q_auto/54E071C5-B255-4891-9E94-B157C395A541_1_105_c_cr2r0c",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1780724184/cld-sample-5.jpg"
+      ],
+      "badges": [
+        { "label": "Edición Limitada", "variant": "limited-edition" },
+        { "label": "20% OFF", "variant": "sale" }
+      ],
+      "price": 1500,
+      "originalPrice": 860,
+      "rating": 4.5,
+      "reviewCount": 19,
+      "colors": [],
+      "category": "makeup"
+    },
+    {
+      "id": "wabi-bum-bag",
+      "title": "Wabi Bum Bag",
+      "slug": "wabi-bum-bag",
+      "images": [
+        "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=600&q=80",
+        "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=600&q=80"
+      ],
+      "badges": [
+        { "label": "Best Seller", "variant": "best-seller" },
+        { "label": "15% OFF", "variant": "kit" }
+      ],
+      "price": 1290,
+      "originalPrice": null,
+      "rating": 4.8,
+      "reviewCount": 253,
+      "colors": [
+        { "name": "Negro", "hex": "#000000" },
+        { "name": "Beige", "hex": "#d4c5a9" }
+      ],
+      "category": "fashion"
+    },
+    {
+      "id": "cargo-tote",
+      "title": "Cargo Tote 100% Piel de Nopal",
+      "slug": "cargo-tote-piel-de-nopal",
+      "images": [
+        "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80",
+        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&q=80"
+      ],
+      "badges": [{ "label": "25% OFF - HOT SALE", "variant": "sale" }],
+      "price": 5990,
+      "originalPrice": null,
+      "rating": 4.3,
+      "reviewCount": 11,
+      "colors": [],
+      "category": "fashion"
+    },
+    {
+      "id": "kit-rutina-ojos",
+      "title": "Kit Makeup Rutina Ojos",
+      "slug": "kit-rutina-ojos",
+      "images": [
+        "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&q=80",
+        "https://images.unsplash.com/photo-1583241800698-e8ab01830a07?w=600&q=80"
+      ],
+      "badges": [{ "label": "Kit 15% OFF", "variant": "kit" }],
+      "price": 1395,
+      "originalPrice": 1640,
+      "rating": 4.6,
+      "reviewCount": 5,
+      "colors": [],
+      "category": "makeup"
+    },
+    {
+      "id": "lip-combo",
+      "title": "Lip Combo 5 en 1",
+      "slug": "lip-combo",
+      "images": [
+        "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=600&q=80",
+        "https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=600&q=80"
+      ],
+      "badges": [
+        { "label": "Best Seller", "variant": "best-seller" },
+        { "label": "Kit 20% OFF", "variant": "sale" }
+      ],
+      "price": 700,
+      "originalPrice": 880,
+      "rating": 4.7,
+      "reviewCount": 176,
+      "colors": [],
+      "category": "makeup"
+    },
+    {
+      "id": "paleta-mil-sombras",
+      "title": "Paleta La Mil Sombras",
+      "slug": "paleta-ojos-la-mil-sombras",
+      "images": [
+        "https://images.unsplash.com/photo-1599733589046-10c7f0f8a1e2?w=600&q=80",
+        "https://images.unsplash.com/photo-1515688594390-b649af70d282?w=600&q=80"
+      ],
+      "badges": [{ "label": "Best Seller", "variant": "best-seller" }],
+      "price": 790,
+      "originalPrice": null,
+      "rating": 4.5,
+      "reviewCount": 135,
+      "colors": [{ "name": "Multicolor", "hex": "#d4a574" }],
+      "category": "makeup"
+    },
+    {
+      "id": "kit-mascaras",
+      "title": "Kit 2 Máscaras (Alargadora + Volumen)",
+      "slug": "kit-el-corral-2-mascaras",
+      "images": [
+        "https://images.unsplash.com/photo-1631214502010-3616b0c3a18c?w=600&q=80",
+        "https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=600&q=80"
+      ],
+      "badges": [{ "label": "Kit 12% OFF", "variant": "kit" }],
+      "price": 510,
+      "originalPrice": 580,
+      "rating": 4.4,
+      "reviewCount": 73,
+      "colors": [],
+      "category": "makeup"
+    },
+    {
+      "id": "kit-enchinador",
+      "title": "Kit Enchinador + Máscara",
+      "slug": "kit-enchinador-mascara",
+      "images": [
+        "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80",
+        "https://images.unsplash.com/photo-1599305090598-fe179d501227?w=600&q=80"
+      ],
+      "badges": [{ "label": "Kit 15% OFF", "variant": "kit" }],
+      "price": 520,
+      "originalPrice": 610,
+      "rating": 4.2,
+      "reviewCount": 29,
+      "colors": [],
+      "category": "makeup"
+    }
+  ]
+}
