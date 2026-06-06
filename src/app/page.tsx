@@ -1,8 +1,8 @@
 import { Hero } from "@/app/_components/hero";
-import { DiscountTiers } from "@/app/_components/discount-tiers";
+// import { DiscountTiers } from "@/app/_components/discount-tiers";
 import { ProductGrid } from "@/app/_components/product-grid";
 import { FeaturedCategories } from "@/app/_components/featured-categories";
-import { PaymentPromo } from "@/app/_components/payment-promo";
+// import { PaymentPromo } from "@/app/_components/payment-promo";
 import { TermsAccordion } from "@/app/_components/terms-accordion";
 import { Newsletter } from "@/app/_components/newsletter";
 import { Footer } from "@/app/_components/footer";
@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
 
       {/* 2. Discount Tiers — escalonados $1,500/$3,000/$4,500 */}
-      <DiscountTiers />
+      {/* <DiscountTiers /> */}
 
       {/* 3. Product Grid — "Productos en Oferta" */}
       <ProductGrid
@@ -28,7 +28,7 @@ export default function Home() {
       <FeaturedCategories />
 
       {/* 5. Payment Promo — Mercado Pago */}
-      <PaymentPromo />
+      {/* <PaymentPromo /> */}
 
       {/* 6. Términos y Condiciones — Acordeón */}
       <TermsAccordion />

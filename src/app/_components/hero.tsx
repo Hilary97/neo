@@ -14,7 +14,7 @@ export function Hero() {
             alt="Hot Sale 2026"
             width={320}
             height={96}
-            className="h-auto w-64 object-contain md:w-80"
+            className="h-auto w-64 bg-none object-contain md:w-80"
             priority
           />
         </div>

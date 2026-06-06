@@ -36,11 +36,11 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Image
-              src="https://placehold.co/240x60/fff/fff?text=LOGO"
+              src="https://res.cloudinary.com/dj223b5lo/image/upload/v1780773268/1B796156-17F5-4DD4-97C9-6419C2BD8F1C_1_105_c_sg48ma.jpg"
               alt="Logo"
-              width={160}
+              width={120}
               height={40}
-              className="h-auto w-32 invert md:w-40"
+              className="h-auto w-32  md:w-30"
             />
             <p className="font-condensed mt-4 text-xs uppercase tracking-widest text-zinc-500">
               ALL THE VIBES
@@ -92,12 +92,10 @@ export function Footer() {
                 >
                   {social}
                 </a>
-              )
+              ),
             )}
           </div>
-          <p className="font-body text-xs text-zinc-700">
-            &copy; 2026 SARELLY
-          </p>
+          <p className="font-body text-xs text-zinc-700">&copy; 2026 SARELLY</p>
         </div>
       </div>
     </footer>
