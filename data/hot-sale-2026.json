@@ -18,7 +18,8 @@
       "rating": 4.5,
       "reviewCount": 19,
       "colors": [],
-      "category": "makeup"
+      "category": "makeup",
+      "mercadoPagoLink": "https://mpago.la/2oDn2nz"
     },
     {
       "id": "wabi-bum-bag",
@@ -40,7 +41,8 @@
         { "name": "Negro", "hex": "#000000" },
         { "name": "Beige", "hex": "#d4c5a9" }
       ],
-      "category": "fashion"
+      "category": "fashion",
+      "mercadoPagoLink": ""
     },
     {
       "id": "cargo-tote",
@@ -56,7 +58,8 @@
       "rating": 4.3,
       "reviewCount": 11,
       "colors": [],
-      "category": "fashion"
+      "category": "fashion",
+      "mercadoPagoLink": ""
     },
     {
       "id": "kit-rutina-ojos",
@@ -72,7 +75,8 @@
       "rating": 4.6,
       "reviewCount": 5,
       "colors": [],
-      "category": "makeup"
+      "category": "makeup",
+      "mercadoPagoLink": ""
     },
     {
       "id": "lip-combo",
@@ -91,7 +95,8 @@
       "rating": 4.7,
       "reviewCount": 176,
       "colors": [],
-      "category": "makeup"
+      "category": "makeup",
+      "mercadoPagoLink": ""
     },
     {
       "id": "paleta-mil-sombras",
@@ -107,11 +112,12 @@
       "rating": 4.5,
       "reviewCount": 135,
       "colors": [{ "name": "Multicolor", "hex": "#d4a574" }],
-      "category": "makeup"
+      "category": "makeup",
+      "mercadoPagoLink": ""
     },
     {
       "id": "kit-mascaras",
-      "title": "Kit 2 Máscaras (Alargadora + Volumen)",
+      "title": "Carillas pro dientes",
       "slug": "kit-el-corral-2-mascaras",
       "images": [
         "https://images.unsplash.com/photo-1631214502010-3616b0c3a18c?w=600&q=80",
@@ -123,7 +129,8 @@
       "rating": 4.4,
       "reviewCount": 73,
       "colors": [],
-      "category": "makeup"
+      "category": "makeup",
+      "mercadoPagoLink": ""
     },
     {
       "id": "kit-enchinador",
@@ -139,7 +146,8 @@
       "rating": 4.2,
       "reviewCount": 29,
       "colors": [],
-      "category": "makeup"
+      "category": "makeup",
+      "mercadoPagoLink": ""
     }
   ]
 }

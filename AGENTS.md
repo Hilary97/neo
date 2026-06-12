@@ -172,6 +172,15 @@ Para cambiar de temporada:
 3. Cambiá el import en `src/lib/products.ts` al nuevo JSON
 4. `npm run build` → deploy
 
+### Links de Pago (Mercado Pago)
+
+Cada producto puede tener un `mercadoPagoLink` opcional: la URL de un "Link de Pago"
+creado manualmente en el dashboard de vendedor de Mercado Pago. No hay backend ni
+script — se pega la URL en el campo del producto en `data/hot-sale-2026.json`.
+
+- Con link: la card muestra el botón "Comprar" → checkout de MP.
+- Sin link (campo vacío): cae al botón "Solicitar" por WhatsApp.
+
 ## Build
 
 - Output estático (next build genera `out/`)

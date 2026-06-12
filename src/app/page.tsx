@@ -1,11 +1,11 @@
-import { Hero } from "@/app/_components/hero";
-// import { DiscountTiers } from "@/app/_components/discount-tiers";
-import { ProductGrid } from "@/app/_components/product-grid";
-import { FeaturedCategories } from "@/app/_components/featured-categories";
-// import { PaymentPromo } from "@/app/_components/payment-promo";
-import { TermsAccordion } from "@/app/_components/terms-accordion";
-import { Newsletter } from "@/app/_components/newsletter";
-import { Footer } from "@/app/_components/footer";
+import { Hero } from "@/app/components/hero";
+// import { DiscountTiers } from "@/app/components/discount-tiers";
+import { ProductGrid } from "@/app/components/product-grid";
+import { FeaturedCategories } from "@/app/components/featured-categories";
+// import { PaymentPromo } from "@/app/components/payment-promo";
+import { TermsAccordion } from "@/app/components/terms-accordion";
+import { Newsletter } from "@/app/components/newsletter";
+import { Footer } from "@/app/components/footer";
 
 export default function Home() {
   return (

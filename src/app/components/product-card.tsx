@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { cn } from "@/lib/cn";
 import { ProductBadge } from "./product-badge";
 import type { Product } from "@/lib/products";
 
@@ -16,6 +15,10 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const hasSecondImage = product.images.length > 1;
   const hasDiscount =
     product.originalPrice && product.originalPrice > product.price;
+  const hasPaymentLink = Boolean(product.mercadoPagoLink);
+  const whatsappHref = `https://wa.me/523312724005?text=${encodeURIComponent(
+    `Me interesa el producto: ${product.title} - $${product.price.toLocaleString("es-MX")} MXN\n\nVer imagen: ${product.images[0]}`,
+  )}`;
 
   return (
     <article
@@ -107,10 +110,26 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           </div>
         )}
 
-        {/* Add to Cart */}
-        <button className="mt-2 w-full rounded-full bg-black py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-all hover:bg-zinc-800 active:scale-[0.98]">
-          Agregar
-        </button>
+        {/* CTA: Link de Pago de Mercado Pago si existe, si no fallback a WhatsApp */}
+        {hasPaymentLink ? (
+          <a
+            href={product.mercadoPagoLink!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 w-full rounded-full bg-black py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-white transition-all hover:bg-zinc-800 active:scale-[0.98]"
+          >
+            Comprar
+          </a>
+        ) : (
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 w-full rounded-full bg-black py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-white transition-all hover:bg-zinc-800 active:scale-[0.98]"
+          >
+            Solicitar
+          </a>
+        )}
       </div>
     </article>
   );
