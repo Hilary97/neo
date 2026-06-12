@@ -179,7 +179,29 @@ creado manualmente en el dashboard de vendedor de Mercado Pago. No hay backend n
 script — se pega la URL en el campo del producto en `data/hot-sale-2026.json`.
 
 - Con link: la card muestra el botón "Comprar" → checkout de MP.
-- Sin link (campo vacío): cae al botón "Solicitar" por WhatsApp.
+- Sin link (campo vacío): cae a PayPal o WhatsApp según la regla de prioridad de abajo.
+
+### Botón de PayPal (Smart Buttons, sin backend)
+
+Si `paypalEnabled: true` en un producto, la card puede mostrar un botón de PayPal
+(`src/app/components/paypal-button.tsx`). Es 100% client-side: usa el SDK de
+PayPal con `NEXT_PUBLIC_PAYPAL_CLIENT_ID` (variable de entorno, ver `.env.local`)
+y resuelve `createOrder` / `capture` directo contra los servidores de PayPal,
+sin backend propio ni Client Secret.
+
+- Moneda actual: MXN. Si el Sandbox tira `CURRENCY_NOT_SUPPORTED`, probar con USD.
+- No hay registro propio de la venta — el dashboard de PayPal es la fuente de verdad.
+
+### Regla de Prioridad: una sola opción de pago por card
+
+Cada `ProductCard` muestra **un único CTA**, nunca varios al mismo tiempo. Prioridad
+(definida en `product-card.tsx`):
+
+1. `mercadoPagoLink` presente → botón "Comprar" (checkout de Mercado Pago)
+2. Si no hay link de MP y `paypalEnabled: true` → botón de PayPal (Smart Buttons)
+3. Si no hay ninguno de los anteriores → botón "Solicitar" por WhatsApp
+
+Para que un producto muestre PayPal, `mercadoPagoLink` debe estar vacío o ausente.
 
 ## Build
 

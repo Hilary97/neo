@@ -13,13 +13,14 @@
         { "label": "Edición Limitada", "variant": "limited-edition" },
         { "label": "20% OFF", "variant": "sale" }
       ],
-      "price": 1500,
+      "price": 10,
       "originalPrice": 860,
       "rating": 4.5,
       "reviewCount": 19,
       "colors": [],
       "category": "makeup",
-      "mercadoPagoLink": "https://mpago.la/2oDn2nz"
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
     },
     {
       "id": "wabi-bum-bag",
@@ -42,7 +43,8 @@
         { "name": "Beige", "hex": "#d4c5a9" }
       ],
       "category": "fashion",
-      "mercadoPagoLink": ""
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
     },
     {
       "id": "cargo-tote",
@@ -59,7 +61,8 @@
       "reviewCount": 11,
       "colors": [],
       "category": "fashion",
-      "mercadoPagoLink": ""
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
     },
     {
       "id": "kit-rutina-ojos",
@@ -96,7 +99,8 @@
       "reviewCount": 176,
       "colors": [],
       "category": "makeup",
-      "mercadoPagoLink": ""
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
     },
     {
       "id": "paleta-mil-sombras",
@@ -113,7 +117,8 @@
       "reviewCount": 135,
       "colors": [{ "name": "Multicolor", "hex": "#d4a574" }],
       "category": "makeup",
-      "mercadoPagoLink": ""
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
     },
     {
       "id": "kit-mascaras",
@@ -130,7 +135,8 @@
       "reviewCount": 73,
       "colors": [],
       "category": "makeup",
-      "mercadoPagoLink": ""
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
     },
     {
       "id": "kit-enchinador",
@@ -147,7 +153,8 @@
       "reviewCount": 29,
       "colors": [],
       "category": "makeup",
-      "mercadoPagoLink": ""
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
     }
   ]
 }

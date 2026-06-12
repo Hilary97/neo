@@ -34,6 +34,9 @@ export interface Product {
   /* URL del Link de Pago de Mercado Pago (creado manualmente en el dashboard MP).
      Si está ausente o vacío, la card cae al CTA de WhatsApp. */
   mercadoPagoLink?: string;
+  /* Si es true, la card muestra además el botón de PayPal (Smart Buttons,
+     pago client-side sin backend). Ver src/app/components/paypal-button.tsx. */
+  paypalEnabled?: boolean;
 }
 
 /* ─── Productos de Temporada ───

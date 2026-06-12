@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ProductBadge } from "./product-badge";
+import { PayPalButton } from "./paypal-button";
 import type { Product } from "@/lib/products";
 
 interface ProductCardProps {
@@ -16,6 +17,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const hasDiscount =
     product.originalPrice && product.originalPrice > product.price;
   const hasPaymentLink = Boolean(product.mercadoPagoLink);
+  const hasPayPal = !hasPaymentLink && Boolean(product.paypalEnabled);
   const whatsappHref = `https://wa.me/523312724005?text=${encodeURIComponent(
     `Me interesa el producto: ${product.title} - $${product.price.toLocaleString("es-MX")} MXN\n\nVer imagen: ${product.images[0]}`,
   )}`;
@@ -110,7 +112,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           </div>
         )}
 
-        {/* CTA: Link de Pago de Mercado Pago si existe, si no fallback a WhatsApp */}
+        {/* CTA único: prioridad Mercado Pago > PayPal > WhatsApp (nunca más de una opción) */}
         {hasPaymentLink ? (
           <a
             href={product.mercadoPagoLink!}
@@ -120,6 +122,8 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           >
             Comprar
           </a>
+        ) : hasPayPal ? (
+          <PayPalButton amount={product.price} />
         ) : (
           <a
             href={whatsappHref}
