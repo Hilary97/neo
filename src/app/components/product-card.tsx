@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ProductBadge } from "./product-badge";
-import { PayPalButton } from "./paypal-button";
+import { ProductCTA } from "./product-cta";
 import type { Product } from "@/lib/products";
 
 interface ProductCardProps {
@@ -16,11 +17,6 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const hasSecondImage = product.images.length > 1;
   const hasDiscount =
     product.originalPrice && product.originalPrice > product.price;
-  const hasPaymentLink = Boolean(product.mercadoPagoLink);
-  const hasPayPal = !hasPaymentLink && Boolean(product.paypalEnabled);
-  const whatsappHref = `https://wa.me/523312724005?text=${encodeURIComponent(
-    `Me interesa el producto: ${product.title} - $${product.price.toLocaleString("es-MX")} MXN\n\nVer imagen: ${product.images[0]}`,
-  )}`;
 
   return (
     <article
@@ -35,13 +31,15 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
         onMouseEnter={() => hasSecondImage && setImgIndex(1)}
         onMouseLeave={() => setImgIndex(0)}
       >
-        <Image
-          src={product.images[imgIndex]}
-          alt={product.title}
-          fill
-          className="object-cover transition-all duration-500 group-hover:scale-105"
-          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-        />
+        <Link href={`/products/${product.slug}`} className="absolute inset-0 z-0">
+          <Image
+            src={product.images[imgIndex]}
+            alt={product.title}
+            fill
+            className="object-cover transition-all duration-500 group-hover:scale-105"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          />
+        </Link>
 
         {/* Badges */}
         {product.badges.length > 0 && (
@@ -83,7 +81,9 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
 
         {/* Title */}
         <h3 className="font-condensed text-lg font-semibold uppercase leading-tight tracking-wide">
-          {product.title}
+          <Link href={`/products/${product.slug}`} className="hover:underline">
+            {product.title}
+          </Link>
         </h3>
 
         {/* Price */}
@@ -112,28 +112,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           </div>
         )}
 
-        {/* CTA único: prioridad Mercado Pago > PayPal > WhatsApp (nunca más de una opción) */}
-        {hasPaymentLink ? (
-          <a
-            href={product.mercadoPagoLink!}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 w-full rounded-full bg-black py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-white transition-all hover:bg-zinc-800 active:scale-[0.98]"
-          >
-            Comprar
-          </a>
-        ) : hasPayPal ? (
-          <PayPalButton amount={product.price} />
-        ) : (
-          <a
-            href={whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 w-full rounded-full bg-black py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-white transition-all hover:bg-zinc-800 active:scale-[0.98]"
-          >
-            Solicitar
-          </a>
-        )}
+        <ProductCTA product={product} className="mt-2" />
       </div>
     </article>
   );

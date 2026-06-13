@@ -1,5 +1,25 @@
 {
   "season": "Hot Sale 2026",
+  "categories": [
+    {
+      "slug": "Boda",
+      "label": "Boda",
+      "title": "Bodas",
+      "subtitle": "Todo lo que necesitás para tu boda."
+    },
+    {
+      "slug": "fashion",
+      "label": "Fashion",
+      "title": "Fashion",
+      "subtitle": "Las piezas que no pueden faltar en tu clóset."
+    },
+    {
+      "slug": "makeup",
+      "label": "Makeup",
+      "title": "Makeup",
+      "subtitle": "Las piezas que no pueden faltar en tu cara."
+    }
+  ],
   "products": [
     {
       "id": "Perfume versage-eau-de-toilette",
@@ -18,9 +38,9 @@
       "rating": 4.5,
       "reviewCount": 19,
       "colors": [],
-      "category": "makeup",
+      "category": "Boda",
       "mercadoPagoLink": "",
-      "paypalEnabled": false
+      "paypalEnabled": true
     },
     {
       "id": "wabi-bum-bag",
@@ -60,7 +80,7 @@
       "rating": 4.3,
       "reviewCount": 11,
       "colors": [],
-      "category": "fashion",
+      "category": "Boda",
       "mercadoPagoLink": "",
       "paypalEnabled": false
     },
@@ -78,7 +98,7 @@
       "rating": 4.6,
       "reviewCount": 5,
       "colors": [],
-      "category": "makeup",
+      "category": "Boda",
       "mercadoPagoLink": ""
     },
     {

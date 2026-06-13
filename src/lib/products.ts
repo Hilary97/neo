@@ -19,6 +19,21 @@ export interface ProductColor {
   image?: string;
 }
 
+/* ─── Categorías de Temporada ───
+ * Definidas en /data/<temporada>.json. Cada categoría es libre (string):
+ * para sumar o quitar categorías entre temporadas, alcanza con editar el JSON.
+ */
+export interface Category {
+  /** Identificador usado en Product.category y en /collections/[slug] */
+  slug: string;
+  /** Nombre corto para badges/nav (ej. featured-categories) */
+  label: string;
+  /** Título de la página de colección */
+  title: string;
+  /** Bajada de la página de colección */
+  subtitle: string;
+}
+
 export interface Product {
   id: string;
   title: string;
@@ -30,7 +45,8 @@ export interface Product {
   rating: number;
   reviewCount: number;
   colors: ProductColor[];
-  category: "makeup" | "fashion";
+  /** Debe matchear el `slug` de alguna entrada en CATEGORIES */
+  category: string;
   /* URL del Link de Pago de Mercado Pago (creado manualmente en el dashboard MP).
      Si está ausente o vacío, la card cae al CTA de WhatsApp. */
   mercadoPagoLink?: string;
@@ -46,6 +62,7 @@ export interface Product {
 
 import seasonData from "../../data/hot-sale-2026.json";
 
+export const CATEGORIES = seasonData.categories as Category[];
 export const PRODUCTS = seasonData.products as Product[];
 
 export function getDiscountedPrice(product: Product): number {

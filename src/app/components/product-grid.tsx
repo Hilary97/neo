@@ -6,7 +6,7 @@ interface ProductGridProps {
   title?: string;
   subtitle?: string;
   limit?: number;
-  category?: "makeup" | "fashion";
+  category?: string;
   showViewAll?: boolean;
   viewAllHref?: string;
   viewAllLabel?: string;
