@@ -20,6 +20,7 @@ export default function Home() {
       <ProductGrid
         id="products"
         limit={8}
+        onlyInStock
         showViewAll
         viewAllLabel="ver todo"
       />

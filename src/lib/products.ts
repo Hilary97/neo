@@ -47,6 +47,8 @@ export interface Product {
   colors: ProductColor[];
   /** Debe matchear el `slug` de alguna entrada en CATEGORIES */
   category: string;
+  /** Si es false, el producto no aparece en la sección "Productos en Stock" del home */
+  inStock: boolean;
   /* URL del Link de Pago de Mercado Pago (creado manualmente en el dashboard MP).
      Si está ausente o vacío, la card cae al CTA de WhatsApp. */
   mercadoPagoLink?: string;

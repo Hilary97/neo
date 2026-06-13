@@ -39,6 +39,7 @@
       "reviewCount": 19,
       "colors": [],
       "category": "Boda",
+      "inStock": false,
       "mercadoPagoLink": "",
       "paypalEnabled": true
     },
@@ -63,6 +64,7 @@
         { "name": "Beige", "hex": "#d4c5a9" }
       ],
       "category": "fashion",
+      "inStock": true,
       "mercadoPagoLink": "",
       "paypalEnabled": false
     },
@@ -81,6 +83,7 @@
       "reviewCount": 11,
       "colors": [],
       "category": "Boda",
+      "inStock": true,
       "mercadoPagoLink": "",
       "paypalEnabled": false
     },
@@ -99,6 +102,7 @@
       "reviewCount": 5,
       "colors": [],
       "category": "Boda",
+      "inStock": true,
       "mercadoPagoLink": ""
     },
     {
@@ -119,8 +123,9 @@
       "reviewCount": 176,
       "colors": [],
       "category": "makeup",
+      "inStock": true,
       "mercadoPagoLink": "",
-      "paypalEnabled": false
+      "paypalEnabled": true
     },
     {
       "id": "paleta-mil-sombras",
@@ -137,6 +142,7 @@
       "reviewCount": 135,
       "colors": [{ "name": "Multicolor", "hex": "#d4a574" }],
       "category": "makeup",
+      "inStock": false,
       "mercadoPagoLink": "",
       "paypalEnabled": false
     },
@@ -155,6 +161,7 @@
       "reviewCount": 73,
       "colors": [],
       "category": "makeup",
+      "inStock": true,
       "mercadoPagoLink": "",
       "paypalEnabled": false
     },
@@ -173,6 +180,7 @@
       "reviewCount": 29,
       "colors": [],
       "category": "makeup",
+      "inStock": true,
       "mercadoPagoLink": "",
       "paypalEnabled": false
     }

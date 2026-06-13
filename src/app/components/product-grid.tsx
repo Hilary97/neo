@@ -7,6 +7,7 @@ interface ProductGridProps {
   subtitle?: string;
   limit?: number;
   category?: string;
+  onlyInStock?: boolean;
   showViewAll?: boolean;
   viewAllHref?: string;
   viewAllLabel?: string;
@@ -18,13 +19,15 @@ export function ProductGrid({
   subtitle = "Los productos de temporada.",
   limit = 8,
   category,
+  onlyInStock = false,
   showViewAll = false,
   viewAllHref = "/collections/shop-all",
   viewAllLabel = "ver todo",
 }: ProductGridProps) {
+  const available = onlyInStock ? PRODUCTS.filter((p) => p.inStock) : PRODUCTS;
   const products = category
-    ? PRODUCTS.filter((p) => p.category === category).slice(0, limit)
-    : PRODUCTS.slice(0, limit);
+    ? available.filter((p) => p.category === category).slice(0, limit)
+    : available.slice(0, limit);
 
   return (
     <section
