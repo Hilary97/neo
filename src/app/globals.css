@@ -94,12 +94,12 @@ body {
 @keyframes logoGlow {
   0%,
   100% {
-    filter: drop-shadow(0 0 14px rgba(233, 99, 63, 0.35))
-      drop-shadow(0 0 32px rgba(233, 99, 63, 0.15));
+    filter: drop-shadow(0 0 14px rgba(39, 194, 245))
+      drop-shadow(0 0 32px rgba(39, 194, 245));
   }
   50% {
-    filter: drop-shadow(0 0 24px rgba(233, 99, 63, 0.65))
-      drop-shadow(0 0 52px rgba(233, 99, 63, 0.35));
+    filter: drop-shadow(0 0 24px rgba(216, 106, 247))
+      drop-shadow(0 0 52px rgba(216, 106, 247));
   }
 }
 
@@ -110,7 +110,7 @@ body {
 }
 
 .animate-logo-float {
-  animation: logoFloat 6s ease-in-out infinite;
+  animation: logoFloat 3s ease-in-out infinite;
 }
 
 /* ─── Swiper-like snap carousel ─── */
