@@ -6,15 +6,15 @@ export function Hero() {
       {/* Background texture/gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 via-black to-black" />
 
-      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center gap-6">
+      <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-6">
         {/* HS Logo */}
-        <div className="mb-4">
+        <div className="mb-4 animate-logo-float">
           <Image
-            src="https://res.cloudinary.com/dj223b5lo/image/upload/v1780773268/1B796156-17F5-4DD4-97C9-6419C2BD8F1C_1_105_c_sg48ma.jpg"
+            src="https://res.cloudinary.com/dj223b5lo/image/upload/e_make_transparent:15/v1780773268/1B796156-17F5-4DD4-97C9-6419C2BD8F1C_1_105_c_sg48ma.png"
             alt="Hot Sale 2026"
             width={320}
             height={96}
-            className="h-auto w-64 bg-none object-contain md:w-80"
+            className="h-auto w-64 object-contain animate-logo-intro md:w-80"
             priority
           />
         </div>
