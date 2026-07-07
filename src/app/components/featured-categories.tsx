@@ -1,39 +1,43 @@
 import Image from "next/image";
 import { CATEGORIES, PRODUCTS } from "@/lib/products";
+import { FloatingCard } from "./floating-card";
 
 interface FeaturedCardProps {
   title: string;
   description: string;
   imageUrl: string;
   href: string;
+  index?: number;
 }
 
-function FeaturedCard({ title, description, imageUrl, href }: FeaturedCardProps) {
+function FeaturedCard({ title, description, imageUrl, href, index = 0 }: FeaturedCardProps) {
   return (
-    <a
-      href={href}
-      className="group relative aspect-[4/5] overflow-hidden rounded-3xl bg-zinc-100 md:aspect-square"
-    >
-      <Image
-        src={imageUrl}
-        alt={title}
-        fill
-        className="object-cover transition-all duration-700 group-hover:scale-105"
-        sizes="(max-width: 768px) 100vw, 50vw"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 p-6 text-white md:p-8">
-        <h3 className="font-heading text-3xl font-bold uppercase leading-tight tracking-tight md:text-4xl">
-          {title}
-        </h3>
-        <p className="font-condensed mt-1 text-sm uppercase tracking-wider text-zinc-300">
-          {description}
-        </p>
-        <span className="font-condensed mt-3 inline-block text-xs font-semibold uppercase tracking-[0.2em] underline underline-offset-4">
-          Descubre más
-        </span>
-      </div>
-    </a>
+    <FloatingCard index={index}>
+      <a
+        href={href}
+        className="group relative block aspect-[4/5] overflow-hidden rounded-3xl bg-zinc-100 md:aspect-square"
+      >
+        <Image
+          src={imageUrl}
+          alt={title}
+          fill
+          className="object-cover transition-all duration-700 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-6 text-white md:p-8">
+          <h3 className="font-heading text-3xl font-bold uppercase leading-tight tracking-tight md:text-4xl">
+            {title}
+          </h3>
+          <p className="font-condensed mt-1 text-sm uppercase tracking-wider text-zinc-300">
+            {description}
+          </p>
+          <span className="font-condensed mt-3 inline-block text-xs font-semibold uppercase tracking-[0.2em] underline underline-offset-4">
+            Descubre más
+          </span>
+        </div>
+      </a>
+    </FloatingCard>
   );
 }
 
@@ -63,13 +67,14 @@ export function FeaturedCategories() {
               </div>
 
               <div className="grid gap-5 md:grid-cols-2">
-                {featured.map((product) => (
+                {featured.map((product, i) => (
                   <FeaturedCard
                     key={product.id}
                     title={product.title}
                     description={product.badges[0]?.label ?? category.subtitle}
                     imageUrl={product.images[0]}
                     href={`/products/${product.slug}`}
+                    index={i}
                   />
                 ))}
               </div>

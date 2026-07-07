@@ -1,3 +1,5 @@
+import { FloatingCard } from "./floating-card";
+
 export function DiscountTiers() {
   return (
     <section className="bg-white px-6 py-16 md:px-10 md:py-24">
@@ -32,43 +34,49 @@ export function DiscountTiers() {
 
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {/* Tier 1 */}
-            <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8 transition-all hover:border-zinc-300 hover:shadow-sm">
-              <p className="font-body text-xs uppercase tracking-[0.15em] text-zinc-400">
-                Desde $1,500 mxn
-              </p>
-              <p className="font-heading mt-2 text-5xl font-bold leading-none">
-                15%
-              </p>
-              <p className="font-condensed mt-1 text-sm uppercase tracking-wider">
-                OFF en tu compra
-              </p>
-            </div>
+            <FloatingCard index={0}>
+              <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8 transition-all hover:border-zinc-300 hover:shadow-sm">
+                <p className="font-body text-xs uppercase tracking-[0.15em] text-zinc-400">
+                  Desde $1,500 mxn
+                </p>
+                <p className="font-heading mt-2 text-5xl font-bold leading-none">
+                  15%
+                </p>
+                <p className="font-condensed mt-1 text-sm uppercase tracking-wider">
+                  OFF en tu compra
+                </p>
+              </div>
+            </FloatingCard>
 
             {/* Tier 2 */}
-            <div className="rounded-2xl border-2 border-black bg-black p-8 text-white transition-all hover:shadow-lg">
-              <p className="font-body text-xs uppercase tracking-[0.15em] text-zinc-400">
-                Desde $3,000 mxn
-              </p>
-              <p className="font-heading mt-2 text-5xl font-bold leading-none">
-                20%
-              </p>
-              <p className="font-condensed mt-1 text-sm uppercase tracking-wider text-zinc-300">
-                OFF en tu compra
-              </p>
-            </div>
+            <FloatingCard index={1}>
+              <div className="rounded-2xl border-2 border-black bg-black p-8 text-white transition-all hover:shadow-lg">
+                <p className="font-body text-xs uppercase tracking-[0.15em] text-zinc-400">
+                  Desde $3,000 mxn
+                </p>
+                <p className="font-heading mt-2 text-5xl font-bold leading-none">
+                  20%
+                </p>
+                <p className="font-condensed mt-1 text-sm uppercase tracking-wider text-zinc-300">
+                  OFF en tu compra
+                </p>
+              </div>
+            </FloatingCard>
 
             {/* Tier 3 */}
-            <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8 transition-all hover:border-zinc-300 hover:shadow-sm">
-              <p className="font-body text-xs uppercase tracking-[0.15em] text-zinc-400">
-                Desde $4,500 mxn
-              </p>
-              <p className="font-heading mt-2 text-5xl font-bold leading-none">
-                25%
-              </p>
-              <p className="font-condensed mt-1 text-sm uppercase tracking-wider">
-                OFF en tu compra
-              </p>
-            </div>
+            <FloatingCard index={2}>
+              <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8 transition-all hover:border-zinc-300 hover:shadow-sm">
+                <p className="font-body text-xs uppercase tracking-[0.15em] text-zinc-400">
+                  Desde $4,500 mxn
+                </p>
+                <p className="font-heading mt-2 text-5xl font-bold leading-none">
+                  25%
+                </p>
+                <p className="font-condensed mt-1 text-sm uppercase tracking-wider">
+                  OFF en tu compra
+                </p>
+              </div>
+            </FloatingCard>
           </div>
 
           {/* Free Shipping */}

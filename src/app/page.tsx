@@ -6,7 +6,6 @@ import { FeaturedCategories } from "@/app/components/featured-categories";
 import { TermsAccordion } from "@/app/components/terms-accordion";
 import { Newsletter } from "@/app/components/newsletter";
 import { Footer } from "@/app/components/footer";
-
 export default function Home() {
   return (
     <>
