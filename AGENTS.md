@@ -13,12 +13,13 @@ Landing page promocional para Hot Sale 2026, construida con Next.js 16 + React 1
 
 | Capa        | Versión   | Notas |
 |-------------|-----------|-------|
-| Next.js     | 16.2.6    | Turbopack por defecto, App Router, output estático |
+| Next.js     | 16.2.6    | Turbopack por defecto, App Router |
 | React       | 19.2.4    | React Compiler estable |
 | Tailwind    | 4.x       | PostCSS, `@theme` inline directives |
 | TypeScript  | 5.x       | Strict mode |
 | clsx        | ^2.1.1    | Conditional classnames |
 | tailwind-merge | ^3.6.0 | Merging Tailwind classes via `cn()` |
+| framer-motion | ^12.x   | Depth/motion: tilt, idle float, hover elevation on cards |
 
 ## Breaking Changes (Next.js 16 vs 15)
 
@@ -32,7 +33,7 @@ Landing page promocional para Hot Sale 2026, construida con Next.js 16 + React 1
 
 - **App Router**: Todo dentro de `src/app/`
 - **Server Components**: Por defecto. Solo se marca "use client" cuando se necesita interactividad (event handlers, hooks)
-- **Componentes**: En `src/app/_components/` (convención Next.js de componentes privados)
+- **Componentes**: En `src/app/components/`
 - **Estilos**: Tailwind 4 con `@theme inline` en `globals.css` para tokens del design system
 - **Datos mock**: `data/<temporada>.json` con productos por temporada. `src/lib/products.ts` importa el JSON y exporta los tipos y funciones.
 - **Imágenes**: Subidas a Cloudinary, URLs en el JSON de temporada. `res.cloudinary.com` configurado en `remotePatterns`.
@@ -68,6 +69,7 @@ Landing page promocional para Hot Sale 2026, construida con Next.js 16 + React 1
 
 - `fadeUp`: Opacity 0→1 + translateY(24px→0). Se aplica vía clase `animate-in`
 - `snap-carousel`: CSS scroll-snap type x mandatory para carruseles horizontales
+- `FloatingCard` (`src/app/components/floating-card.tsx`, "use client"): wrapper con Framer Motion que da profundidad a tarjetas — perspective + tilt por mouse (rotateX/rotateY vía spring), float idle escalonado por `index`, sombra de contacto tintada en `--color-accent`, y hover con scale + elevación. Respeta `prefers-reduced-motion` (desactiva tilt/float, deja solo elevación estática). Usado en product-card, featured-categories, discount-tiers y payment-promo.
 
 ### Badges (ProductBadge)
 
@@ -97,11 +99,14 @@ neo/
     │   ├── page.tsx             ← Home page: composición de secciones
     │   ├── globals.css          ← Design system tokens, base, animaciones
     │   ├── favicon.ico
-    │   └── _components/         ← Componentes privados de la landing
+    │   └── components/          ← Componentes de la landing
     │       ├── hero.tsx         ← Hero: fondo negro, tagline, CTA
     │       ├── discount-tiers.tsx ← Escala de descuentos 15%/20%/25% + envío gratis
     │       ├── product-card.tsx ← Card de producto con hover, badges, precios
     │       ├── product-grid.tsx ← Grid responsive 2/3/4 cols con fadeUp
+    │       ├── product-cta.tsx  ← CTA de compra (MP / PayPal / WhatsApp)
+    │       ├── paypal-button.tsx ← Smart Button de PayPal (client-side)
+    │       ├── floating-card.tsx ← Wrapper de profundidad/motion (Framer Motion)
     │       ├── featured-categories.tsx ← Makeup + Fashion hero cards
     │       ├── payment-promo.tsx ← Mercado Pago promo con cupón HSALEMP
     │       ├── terms-accordion.tsx ← Acordeón de Términos y Condiciones
@@ -205,9 +210,8 @@ Para que un producto muestre PayPal, `mercadoPagoLink` debe estar vacío o ausen
 
 ## Build
 
-- Output estático (next build genera `out/`)
 - `npm run dev` para desarrollo con Turbopack
-- `npm run build` para build de producción
+- `npm run build` para build de producción (SSG/estático por página, sin `output: "export"` en `next.config.ts`)
 
 ## Issues Conocidos / Gotchas
 
@@ -223,7 +227,7 @@ Para que un producto muestre PayPal, `mercadoPagoLink` debe estar vacío o ausen
 - [ ] Implementar filtros por categoría
 - [ ] Agregar carrito (Drawer/Sidebar)
 - [ ] Integrar API de Mercado Pago
-- [ ] Agregar animaciones con Framer Motion
+- [x] Agregar animaciones con Framer Motion (`FloatingCard` — ver Design System)
 - [ ] Tests E2E con Playwright
 - [ ] Página de producto individual
 - [ ] Header sticky con navegación
