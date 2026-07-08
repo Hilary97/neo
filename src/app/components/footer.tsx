@@ -86,17 +86,27 @@ export function Footer() {
         {/* Social */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-zinc-800 pt-8 md:flex-row">
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
-            {["Facebook", "Instagram", "TikTok", "YouTube", "Pinterest"].map(
-              (social) => (
-                <a
-                  key={social}
-                  href="https://www.instagram.com/neoestudioss?igsh=Y2x2bmJ5Z2o1NmY="
-                  className="font-body text-xs uppercase tracking-widest text-zinc-600 transition-colors hover:text-white"
-                >
-                  {social}
-                </a>
-              ),
-            )}
+            {[
+              {
+                label: "Facebook",
+                href: "https://www.facebook.com/share/1am2y9EuFW/?mibextid=wwXIfr",
+              },
+              {
+                label: "Instagram",
+                href: "https://www.instagram.com/neoestudioss?igsh=Y2x2bmJ5Z2o1NmY=",
+              },
+              { label: "TikTok", href: "#" },
+            ].map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body text-xs uppercase tracking-widest text-zinc-600 transition-colors hover:text-white"
+              >
+                {social.label}
+              </a>
+            ))}
           </div>
           <p className="font-body text-xs text-zinc-700">&copy; 2026 SARELLY</p>
         </div>
