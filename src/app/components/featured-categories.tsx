@@ -73,7 +73,7 @@ export function FeaturedCategories() {
                     title={product.title}
                     description={product.badges[0]?.label ?? category.subtitle}
                     imageUrl={product.images[0]}
-                    href={`/products/${product.slug}`}
+                    href={`/collections/${category.slug}`}
                     index={i}
                   />
                 ))}

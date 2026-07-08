@@ -73,11 +73,21 @@ Landing page promocional para Hot Sale 2026, construida con Next.js 16 + React 1
 
 ### Badges (ProductBadge)
 
-- `sale`: Fondo `--color-sale`, texto blanco — "HASTA -55% OFF"
-- `best-seller`: Fondo `--color-best-seller`, texto blanco — "BEST SELLER"
-- `new`: Fondo `--color-new`, texto blanco — "NEW"
-- `limited`: Fondo `--color-limited`, texto negro — "EDICIÓN LIMITADA"
-- `preorder`: Fondo `--color-preorder`, texto blanco — "PRE-VENTA"
+`BadgeVariant` (`src/lib/products.ts`) tiene 6 variantes. Los colores están
+hardcodeados en `src/app/components/product-badge.tsx` con clases Tailwind
+directas — **no** consumen los tokens `--color-sale`/`--color-best-seller`/etc.
+de la tabla de arriba (esos tokens quedaron sin usar tras un refactor; siguen
+disponibles en `globals.css` pero hoy no están conectados a los badges):
+
+- `sale`: `bg-sale` (sí usa el token `--color-sale`), texto blanco
+- `best-seller`: `bg-blue-500`, texto blanco
+- `new`: `bg-green-600`, texto blanco
+- `limited-edition`: `bg-amber-200`, texto negro
+- `pre-order`: `bg-black`, texto blanco
+- `kit`: `bg-sale`, texto blanco
+
+El label visible (ej. "LA MAS VENDIDA") lo define cada producto en el JSON de
+temporada — el componente solo aplica el color según `variant`.
 
 ## Estructura de Archivos
 
@@ -107,7 +117,7 @@ neo/
     │       ├── product-cta.tsx  ← CTA de compra (MP / PayPal / WhatsApp)
     │       ├── paypal-button.tsx ← Smart Button de PayPal (client-side)
     │       ├── floating-card.tsx ← Wrapper de profundidad/motion (Framer Motion)
-    │       ├── featured-categories.tsx ← Makeup + Fashion hero cards
+    │       ├── featured-categories.tsx ← Hero cards por categoría (data-driven, ver CATEGORIES)
     │       ├── payment-promo.tsx ← Mercado Pago promo con cupón HSALEMP
     │       ├── terms-accordion.tsx ← Acordeón de Términos y Condiciones
     │       ├── newsletter.tsx   ← Formulario newsletter (use client)
@@ -126,28 +136,32 @@ neo/
 - Body con clases de font y scroll-smooth
 
 ### page.tsx
-Server Component. Orden de secciones:
+Server Component. Orden de secciones activas actualmente:
 1. Hero
-2. DiscountTiers
+2. ProductGrid (`id="products"`, `limit={8}`, `onlyInStock`, `showViewAll`)
 3. FeaturedCategories
-4. ProductGrid
-5. PaymentPromo
-6. TermsAccordion
-7. Newsletter
-8. Footer
+4. TermsAccordion
+5. Newsletter
+6. Footer
+
+`DiscountTiers` y `PaymentPromo` existen como componentes pero están comentados
+(no importados) en `page.tsx` — descomentar para reactivarlos.
 
 ### product-card.tsx
-- Imagen con hover effect (escala 105%)
-- Badge superpuesto (esquina superior izquierda)
-- Precios: tachado (original) + precio Hot Sale
-- Selector de colores (círculos)
-- Rating con estrellas
-- Botón "COMPRAR"
+- Imagen con hover effect (escala 105%); si el producto tiene 2+ imágenes, hace swap a la segunda en hover
+- Badges superpuestos (esquina superior derecha, stackeados si hay varios)
+- Precios: tachado (original) + precio actual
+- Selector de colores (círculos, sobre la imagen y debajo del título)
+- Rating con estrellas + cantidad de reviews
+- CTA vía `ProductCTA` — ver "Regla de Prioridad" en Datos
 
 ### product-grid.tsx
-- Wrapper que recibe `products: Product[]`
+- No recibe `products` por prop — importa `PRODUCTS` directo de `@/lib/products`
+- Props: `id`, `title`, `subtitle`, `limit` (default 8), `category` (filtra por slug),
+  `onlyInStock`, `showViewAll`, `viewAllHref`, `viewAllLabel`
 - Grid responsive: 2 cols (mobile) → 3 cols (tablet) → 4 cols (desktop)
 - Cada card animada con fadeUp (efecto escalonado vía `style={{ animationDelay }}`)
+- Usado tanto en el home (`ProductGrid` general) como en `/collections/[slug]` (con `category`)
 
 ### terms-accordion.tsx
 - "use client" para interactividad
@@ -167,9 +181,19 @@ Server Component. Orden de secciones:
 ## Datos
 
 `src/lib/products.ts` exporta:
-- `Product` type: id, name, brand, category, price, originalPrice, image, badge, colors, rating, description
-- `PRODUCTS: Product[]` — array desde `data/hot-sale-2026.json` (8 productos makeup + fashion)
+- `Product` type: `id`, `title`, `slug`, `images: string[]`, `badges: ProductBadge[]`,
+  `price`, `originalPrice`, `rating`, `reviewCount`, `colors`, `category`, `inStock`,
+  `mercadoPagoLink?`, `paypalEnabled?`
+- `Category` type: `slug` (usado en `Product.category` y `/collections/[slug]`),
+  `label`, `title`, `subtitle` — categorías 100% data-driven, no hay un set fijo
+  (agregar/quitar categorías es editar el JSON, no tocar código)
+- `CATEGORIES: Category[]` y `PRODUCTS: Product[]` — arrays desde `data/hot-sale-2026.json`
 - `getDiscountedPrice()` y `getDiscountPercent()` — helpers de precios
+
+La temporada activa (`hot-sale-2026.json`) es de merchandising personalizado
+(tazas, termos, sudaderas, copas, botellas, tarros, espejos) — no makeup/fashion.
+Las categorías son las que define ese JSON en cada momento; no asumir nombres
+fijos al escribir código o docs nuevos.
 
 Para cambiar de temporada:
 1. Subí las imágenes nuevas a Cloudinary
