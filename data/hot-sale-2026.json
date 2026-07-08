@@ -14,7 +14,7 @@
       "subtitle": "Protegete del frio modo fashion"
     },
     {
-      "slug": "Termos",
+      "slug": "Termo",
       "label": "Termos",
       "title": "Termos",
       "subtitle": "Protege tu bebida del calor"
@@ -42,6 +42,12 @@
       "label": "Espejo",
       "title": "Espejo-Personalizado",
       "subtitle": "Personaliza tu espejo para tu evento"
+    },
+    {
+      "slug": "Sudadera",
+      "label": "Sudaderas",
+      "title": "Sudaderas",
+      "subtitle": "Protegete del frio modo fashion"
     }
   ],
 
@@ -91,7 +97,7 @@
     {
       "id": "Taza-Corazon",
       "title": "Taza-Corazon",
-      "slug": "Taza",
+      "slug": "Taza-Corazon",
       "images": [
         "https://res.cloudinary.com/dj223b5lo/image/upload/v1783465473/taza-corazon_dth4v4.webp",
         "https://res.cloudinary.com/dj223b5lo/image/upload/v1783466033/taza-corazon-2_fnzqz4.webp"
@@ -110,7 +116,7 @@
     {
       "id": "Taza-conica",
       "title": "Taza-Conica-Blanca",
-      "slug": "Taza-Conica-Blanca",
+      "slug": "Taza-conica",
       "images": [
         "https://res.cloudinary.com/dj223b5lo/image/upload/v1783466279/Taza-conica_djcbuc.webp",
         "https://res.cloudinary.com/dj223b5lo/image/upload/v1783466302/taza-conica-2_tcwbjf.jpg"
@@ -184,14 +190,14 @@
     },
     {
       "id": "Tarro-Cristal",
-      "title": "Tarro-Cristal",
+      "title": "Tarro-Cristal-Cervercero",
       "slug": "Tarro-Cristal",
       "images": [
         "https://res.cloudinary.com/dj223b5lo/image/upload/v1783468419/tarro-cristal_bexibv.jpg",
         "https://res.cloudinary.com/dj223b5lo/image/upload/v1783468472/tarro-cristal-vinil_gnmyv1.jpg"
       ],
       "badges": [{ "label": "Best-seller", "variant": "best-seller" }],
-      "price": 520,
+      "price": 185,
       "originalPrice": 610,
       "rating": 4.2,
       "reviewCount": 29,
@@ -255,6 +261,223 @@
       "colors": [],
       "category": "Espejo",
       "inStock": true,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+    {
+      "id": "Sudadera",
+      "title": "Sudadera-Personalizada",
+      "slug": "Sudadera",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783473955/sudadera-personalizada_alvxa3.png",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783474109/sudadera-persona_k1c8sy.png"
+      ],
+      "badges": [],
+      "price": 380,
+      "originalPrice": null,
+      "rating": 4.2,
+      "reviewCount": 29,
+      "colors": [
+        { "name": "Negro", "hex": "#000000" },
+        { "name": "Blanco", "hex": "#FFFFFF" }
+      ],
+      "category": "Sudadera",
+      "inStock": true,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+    {
+      "id": "Termo-1",
+      "title": "Termo-20 oz-Largo",
+      "slug": "Termo-1",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783475316/termo-20ox-largo_o06dak.png",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783475442/termo-largo_ivbhft.webp"
+      ],
+      "badges": [],
+      "price": 235,
+      "originalPrice": null,
+      "rating": 4.2,
+      "reviewCount": 29,
+      "colors": [],
+      "category": "Termo",
+      "inStock": false,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+
+    {
+      "id": "Termo-2",
+      "title": "Termo-20 oz-Ancho",
+      "slug": "Termo-2",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783476608/termo-ancho_n1mc1s.jpg",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783476737/termo-anncho_ohkz42.webp"
+      ],
+      "badges": [{ "label": "El mas vendido", "variant": "best-seller" }],
+      "price": 247,
+      "originalPrice": null,
+      "rating": 4.2,
+      "reviewCount": 29,
+      "colors": [],
+      "category": "Termo",
+      "inStock": false,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+
+    {
+      "id": "Termo-3",
+      "title": "Termo-12 oz",
+      "slug": "Termo-3",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783477029/Termo-12oz_swb4ut.jpg",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783477077/termo-12oz_llvllf.jpg"
+      ],
+      "badges": [],
+      "price": 241,
+      "originalPrice": null,
+      "rating": 4.2,
+      "reviewCount": 29,
+      "colors": [],
+      "category": "Termo",
+      "inStock": false,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+
+    {
+      "id": "Termo-4",
+      "title": "Termo-18 oz-Coffe",
+      "slug": "Termo-4",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783477372/Thermo-coffe_bkvj0a.jpg",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783478155/Thermo-coffe_uuirqa.png"
+      ],
+      "badges": [],
+      "price": 240,
+      "originalPrice": null,
+      "rating": 4.2,
+      "reviewCount": 29,
+      "colors": [],
+      "category": "Termo",
+      "inStock": false,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+
+    {
+      "id": "Termo-5",
+      "title": "Termo-10 oz-Petit",
+      "slug": "Termo-5",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783478748/termo-petit_jyvd1n.jpg"
+      ],
+      "badges": [],
+      "price": 227,
+      "originalPrice": null,
+      "rating": 4.2,
+      "reviewCount": 31,
+      "colors": [],
+      "category": "Termo",
+      "inStock": false,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+
+    {
+      "id": "Termo-6",
+      "title": "Termo-36 oz-Cilindro",
+      "slug": "Termo-6",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783480700/Termo-36ox_jqdnjk.jpg",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783480753/termo-36oz_hwmxfb.jpg"
+      ],
+      "badges": [],
+      "price": 263,
+      "originalPrice": null,
+      "rating": 4.2,
+      "reviewCount": 55,
+      "colors": [],
+      "category": "Termo",
+      "inStock": true,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+
+    {
+      "id": "Termo-7",
+      "title": "Termo-30 oz",
+      "slug": "Termo-7",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783481049/termo-30oz_vr4rgu.webp",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783481068/termo-30_Oz_a33mz5.webp"
+      ],
+      "badges": [],
+      "price": 265,
+      "originalPrice": null,
+      "rating": 4.2,
+      "reviewCount": 12,
+      "colors": [],
+      "category": "Termo",
+      "inStock": false,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+
+    {
+      "id": "Termo-8",
+      "title": "Termo-14 oz-Porta Lata",
+      "slug": "Termo-8",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783488224/termo-14_oz_dpynrf.webp"
+      ],
+      "badges": [],
+      "price": 285,
+      "originalPrice": null,
+      "rating": 2.2,
+      "reviewCount": 9,
+      "colors": [],
+      "category": "Termo",
+      "inStock": false,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+
+    {
+      "id": "Termo-9",
+      "title": "Termo-40 oz- Caguama",
+      "slug": "Termo-9",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783488412/porta-caguama_o5g0jz.jpg"
+      ],
+      "badges": [],
+      "price": 455,
+      "originalPrice": null,
+      "rating": 4.2,
+      "reviewCount": 49,
+      "colors": [],
+      "category": "Termo",
+      "inStock": false,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+
+    {
+      "id": "Termo-10",
+      "title": "Termo-14 oz-Taza",
+      "slug": "Termo-10",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783488558/taza14oz_gxhqxs.jpg"
+      ],
+      "badges": [],
+      "price": 272,
+      "originalPrice": null,
+      "rating": 4.2,
+      "reviewCount": 12,
+      "colors": [],
+      "category": "Termo",
+      "inStock": false,
       "mercadoPagoLink": "",
       "paypalEnabled": false
     }

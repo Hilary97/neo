@@ -7,7 +7,7 @@ const footerLinks = {
       { label: "Tiendas Físicas", href: "#" },
       { label: "Sobre Nosotros", href: "#" },
       { label: "Trabaja con Nosotros", href: "#" },
-      { label: "Contacto", href: "#" },
+      { label: "Contacto", href: "https://wa.me/523312724005" },
     ],
   },
   ayuda: {
@@ -69,6 +69,9 @@ export function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
+                      {...(link.href.startsWith("https://wa.me")
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
                       className="font-body text-sm text-zinc-400 transition-colors hover:text-white"
                     >
                       {link.label}
@@ -87,7 +90,7 @@ export function Footer() {
               (social) => (
                 <a
                   key={social}
-                  href="#"
+                  href="https://www.instagram.com/neoestudioss?igsh=Y2x2bmJ5Z2o1NmY="
                   className="font-body text-xs uppercase tracking-widest text-zinc-600 transition-colors hover:text-white"
                 >
                   {social}
