@@ -2,184 +2,258 @@
   "season": "Hot Sale 2026",
   "categories": [
     {
-      "slug": "Boda",
-      "label": "Boda",
-      "title": "Bodas",
-      "subtitle": "Todo lo que necesitás para tu boda."
+      "slug": "Taza",
+      "label": "Tazas",
+      "title": "Tazas",
+      "subtitle": "Elige tu mejor taza para regalar o disfrutar de tu cafesito."
     },
     {
-      "slug": "fashion",
-      "label": "Fashion",
-      "title": "Fashion",
-      "subtitle": "Las piezas que no pueden faltar en tu clóset."
+      "slug": "Sudaderas",
+      "label": "Sudaderas",
+      "title": "Sudaderas",
+      "subtitle": "Protegete del frio modo fashion"
     },
     {
-      "slug": "makeup",
-      "label": "Makeup",
-      "title": "Makeup",
-      "subtitle": "Las piezas que no pueden faltar en tu cara."
+      "slug": "Termos",
+      "label": "Termos",
+      "title": "Termos",
+      "subtitle": "Protege tu bebida del calor"
+    },
+    {
+      "slug": "Tarro",
+      "label": "Tarro",
+      "title": "Tarro",
+      "subtitle": "Para disfrutar una buena cerveza."
+    },
+    {
+      "slug": "Copa",
+      "label": "Copas",
+      "title": "Copas",
+      "subtitle": "Muestrate elegante con tu copa personalizada"
+    },
+    {
+      "slug": "Botella",
+      "label": "Botellas",
+      "title": "Botellas",
+      "subtitle": "Personaliza tu Botella para guardar tu mejor tequila."
+    },
+    {
+      "slug": "Espejo",
+      "label": "Espejo",
+      "title": "Espejo-Personalizado",
+      "subtitle": "Personaliza tu espejo para tu evento"
     }
   ],
+
   "products": [
     {
-      "id": "Perfume versage-eau-de-toilette",
-      "title": "Perfume versage-eau-de-toilette",
-      "slug": "kit-ajolote-cumple",
+      "id": "Taza-color-liso",
+      "title": "Taza-Diseño lizo en color blanco",
+      "slug": "Taza-color-liso",
       "images": [
-        "https://res.cloudinary.com/dj223b5lo/image/upload/f_auto,q_auto/54E071C5-B255-4891-9E94-B157C395A541_1_105_c_cr2r0c",
-        "https://res.cloudinary.com/dj223b5lo/image/upload/v1780724184/cld-sample-5.jpg"
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783463330/taza-lisa-estampada_w9icsi.jpg",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783463678/taza-disen%CC%83o-lizo-2_wsnhry.png"
       ],
-      "badges": [
-        { "label": "Edición Limitada", "variant": "limited-edition" },
-        { "label": "20% OFF", "variant": "sale" }
-      ],
-      "price": 10,
-      "originalPrice": 860,
-      "rating": 4.5,
-      "reviewCount": 19,
-      "colors": [],
-      "category": "Boda",
-      "inStock": false,
-      "mercadoPagoLink": "",
-      "paypalEnabled": true
-    },
-    {
-      "id": "wabi-bum-bag",
-      "title": "Wabi Bum Bag",
-      "slug": "wabi-bum-bag",
-      "images": [
-        "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=600&q=80",
-        "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=600&q=80"
-      ],
-      "badges": [
-        { "label": "Best Seller", "variant": "best-seller" },
-        { "label": "15% OFF", "variant": "kit" }
-      ],
-      "price": 1290,
+      "badges": [{ "label": "La mas vendida", "variant": "best-seller" }],
+      "price": 80,
       "originalPrice": null,
-      "rating": 4.8,
-      "reviewCount": 253,
-      "colors": [
-        { "name": "Negro", "hex": "#000000" },
-        { "name": "Beige", "hex": "#d4c5a9" }
-      ],
-      "category": "fashion",
+      "rating": 4.5,
+      "reviewCount": 20,
+      "colors": [],
+      "category": "Taza",
       "inStock": true,
       "mercadoPagoLink": "",
       "paypalEnabled": false
     },
     {
-      "id": "cargo-tote",
-      "title": "Cargo Tote 100% Piel de Nopal",
-      "slug": "cargo-tote-piel-de-nopal",
+      "id": "Taza-Magica",
+      "title": "Taza-Magica",
+      "slug": "Taza-Magica",
       "images": [
-        "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80",
-        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&q=80"
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783464102/Taza-magica_rtpg55.jpg",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783465968/taza-magica_n8csgy.png"
       ],
-      "badges": [{ "label": "25% OFF - HOT SALE", "variant": "sale" }],
-      "price": 5990,
+      "badges": [{ "label": "La mas vendida", "variant": "best-seller" }],
+      "price": 125,
+      "originalPrice": null,
+      "rating": 4.8,
+      "reviewCount": 45,
+      "colors": [
+        { "name": "Negro", "hex": "#000000" },
+        { "name": "Azul", "hex": "#0066FF" },
+        { "name": "Rojo", "hex": "#FF2600" }
+      ],
+      "category": "Taza",
+      "inStock": true,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+    {
+      "id": "Taza-Corazon",
+      "title": "Taza-Corazon",
+      "slug": "Taza",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783465473/taza-corazon_dth4v4.webp",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783466033/taza-corazon-2_fnzqz4.webp"
+      ],
+      "badges": [{ "label": "Edicion-Especial", "variant": "sale" }],
+      "price": 90,
       "originalPrice": null,
       "rating": 4.3,
       "reviewCount": 11,
       "colors": [],
-      "category": "Boda",
-      "inStock": true,
-      "mercadoPagoLink": "",
-      "paypalEnabled": false
-    },
-    {
-      "id": "kit-rutina-ojos",
-      "title": "Kit Makeup Rutina Ojos",
-      "slug": "kit-rutina-ojos",
-      "images": [
-        "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&q=80",
-        "https://images.unsplash.com/photo-1583241800698-e8ab01830a07?w=600&q=80"
-      ],
-      "badges": [{ "label": "Kit 15% OFF", "variant": "kit" }],
-      "price": 1395,
-      "originalPrice": 1640,
-      "rating": 4.6,
-      "reviewCount": 5,
-      "colors": [],
-      "category": "Boda",
-      "inStock": true,
-      "mercadoPagoLink": ""
-    },
-    {
-      "id": "lip-combo",
-      "title": "Lip Combo 5 en 1",
-      "slug": "lip-combo",
-      "images": [
-        "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=600&q=80",
-        "https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=600&q=80"
-      ],
-      "badges": [
-        { "label": "Best Seller", "variant": "best-seller" },
-        { "label": "Kit 20% OFF", "variant": "sale" }
-      ],
-      "price": 700,
-      "originalPrice": 880,
-      "rating": 4.7,
-      "reviewCount": 176,
-      "colors": [],
-      "category": "makeup",
-      "inStock": true,
-      "mercadoPagoLink": "",
-      "paypalEnabled": true
-    },
-    {
-      "id": "paleta-mil-sombras",
-      "title": "Paleta La Mil Sombras",
-      "slug": "paleta-ojos-la-mil-sombras",
-      "images": [
-        "https://images.unsplash.com/photo-1599733589046-10c7f0f8a1e2?w=600&q=80",
-        "https://images.unsplash.com/photo-1515688594390-b649af70d282?w=600&q=80"
-      ],
-      "badges": [{ "label": "Best Seller", "variant": "best-seller" }],
-      "price": 790,
-      "originalPrice": null,
-      "rating": 4.5,
-      "reviewCount": 135,
-      "colors": [{ "name": "Multicolor", "hex": "#d4a574" }],
-      "category": "makeup",
+      "category": "Taza",
       "inStock": false,
       "mercadoPagoLink": "",
       "paypalEnabled": false
     },
     {
-      "id": "kit-mascaras",
-      "title": "Carillas pro dientes",
-      "slug": "kit-el-corral-2-mascaras",
+      "id": "Taza-conica",
+      "title": "Taza-Conica-Blanca",
+      "slug": "Taza-Conica-Blanca",
       "images": [
-        "https://images.unsplash.com/photo-1631214502010-3616b0c3a18c?w=600&q=80",
-        "https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?w=600&q=80"
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783466279/Taza-conica_djcbuc.webp",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783466302/taza-conica-2_tcwbjf.jpg"
       ],
-      "badges": [{ "label": "Kit 12% OFF", "variant": "kit" }],
-      "price": 510,
-      "originalPrice": 580,
-      "rating": 4.4,
-      "reviewCount": 73,
+      "badges": [{ "label": "Limitada", "variant": "kit" }],
+      "price": 140,
+      "originalPrice": null,
+      "rating": 4.6,
+      "reviewCount": 25,
       "colors": [],
-      "category": "makeup",
-      "inStock": true,
+      "category": "Taza",
+      "inStock": false,
+      "mercadoPagoLink": ""
+    },
+    {
+      "id": "Taza-fondo-color",
+      "title": "Taza-con fondo de color ",
+      "slug": "Taza-fondo-color",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783467620/taza-fondo-colorido_aevwyt.png",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783467782/taza-fondo-color_drdtg7.webp"
+      ],
+      "badges": [{ "label": "Edicion-Especial", "variant": "best-seller" }],
+      "price": 95,
+      "originalPrice": null,
+      "rating": 4.7,
+      "reviewCount": 38,
+      "colors": [],
+      "category": "Taza",
+      "inStock": false,
+      "mercadoPagoLink": "",
+      "paypalEnabled": true
+    },
+    {
+      "id": "Taza-transparete",
+      "title": "Taza-Transparente-Personalizada-Vinil",
+      "slug": "Taza-transparente",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783467930/taza-transparente_bwrfem.jpg",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783467984/taza-transparente-vinil_fepdfq.jpg"
+      ],
+      "badges": [{ "label": "Best Seller", "variant": "best-seller" }],
+      "price": 95,
+      "originalPrice": null,
+      "rating": 4.5,
+      "reviewCount": 10,
+      "colors": [],
+      "category": "Taza",
+      "inStock": false,
       "mercadoPagoLink": "",
       "paypalEnabled": false
     },
     {
-      "id": "kit-enchinador",
-      "title": "Kit Enchinador + Máscara",
-      "slug": "kit-enchinador-mascara",
+      "id": "Tarro-Cristal-Bambu",
+      "title": "Tarro-Cristal-Tapa de Bambu",
+      "slug": "Tarro-Cristal-Bambu",
       "images": [
-        "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80",
-        "https://images.unsplash.com/photo-1599305090598-fe179d501227?w=600&q=80"
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783468172/vaso-bambu_lirmde.jpg",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783468220/vaso-bambu-vinil_ff1zjh.jpg"
       ],
-      "badges": [{ "label": "Kit 15% OFF", "variant": "kit" }],
+      "badges": [{ "label": "Best-Seller", "variant": "best-seller" }],
+      "price": 125,
+      "originalPrice": null,
+      "rating": 4.4,
+      "reviewCount": 73,
+      "colors": [],
+      "category": "Tarro",
+      "inStock": false,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+    {
+      "id": "Tarro-Cristal",
+      "title": "Tarro-Cristal",
+      "slug": "Tarro-Cristal",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783468419/tarro-cristal_bexibv.jpg",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783468472/tarro-cristal-vinil_gnmyv1.jpg"
+      ],
+      "badges": [{ "label": "Best-seller", "variant": "best-seller" }],
       "price": 520,
       "originalPrice": 610,
       "rating": 4.2,
       "reviewCount": 29,
       "colors": [],
-      "category": "makeup",
+      "category": "Tarro",
+      "inStock": false,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+    {
+      "id": "Copa",
+      "title": "Copa-Personalizada",
+      "slug": "Copa",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783470028/copa-vinil-pers_qheecr.png",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783469677/copa_kuwuff.jpg"
+      ],
+      "badges": [{ "label": "Edicion limitada", "variant": "limited-edition" }],
+      "price": "-Depende-Diseño y Piezas",
+      "originalPrice": null,
+      "rating": 4.2,
+      "reviewCount": 29,
+      "colors": [],
+      "category": "Copa",
+      "inStock": true,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+    {
+      "id": "Botella",
+      "title": "Botella-Personalizada",
+      "slug": "Botella",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783470310/botella-personalizada_nxnly5.png",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783470554/botella-transparente_gnxb6a.jpg"
+      ],
+      "badges": [{ "label": "Edicion limitada", "variant": "limited-edition" }],
+      "price": 280,
+      "originalPrice": null,
+      "rating": 4.2,
+      "reviewCount": 29,
+      "colors": [],
+      "category": "Botella",
+      "inStock": true,
+      "mercadoPagoLink": "",
+      "paypalEnabled": false
+    },
+    {
+      "id": "Espejo",
+      "title": "Espejo-Personalizado",
+      "slug": "Espejo",
+      "images": [
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783470974/Espejo-personalizado_hdim2p.jpg",
+        "https://res.cloudinary.com/dj223b5lo/image/upload/v1783471009/espejo-vinil-per_c82l5h.jpg"
+      ],
+      "badges": [{ "label": "Edicion limitada", "variant": "limited-edition" }],
+      "price": "-Depende-De tu diseño",
+      "originalPrice": null,
+      "rating": 4.2,
+      "reviewCount": 29,
+      "colors": [],
+      "category": "Espejo",
       "inStock": true,
       "mercadoPagoLink": "",
       "paypalEnabled": false

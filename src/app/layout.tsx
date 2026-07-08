@@ -22,7 +22,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Hot Sale 2026",
+  title: "Neo-2026",
   description:
     "Hasta -55% OFF acumulando descuentos. Del 25 de Mayo al 2 de Junio. Envío gratis desde $1,000 MXN.",
   openGraph: {
