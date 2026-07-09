@@ -146,7 +146,7 @@
       "reviewCount": 38,
       "colors": [],
       "category": "Taza",
-      "inStock": false,
+      "inStock": true,
       "mercadoPagoLink": "",
       "paypalEnabled": true
     },
@@ -222,7 +222,7 @@
       "reviewCount": 29,
       "colors": [],
       "category": "Copa",
-      "inStock": true,
+      "inStock": false,
       "mercadoPagoLink": "",
       "paypalEnabled": false
     },
@@ -241,7 +241,7 @@
       "reviewCount": 29,
       "colors": [],
       "category": "Botella",
-      "inStock": true,
+      "inStock": false,
       "mercadoPagoLink": "",
       "paypalEnabled": false
     },
@@ -260,7 +260,7 @@
       "reviewCount": 29,
       "colors": [],
       "category": "Espejo",
-      "inStock": true,
+      "inStock": false,
       "mercadoPagoLink": "",
       "paypalEnabled": false
     },
@@ -282,7 +282,7 @@
         { "name": "Blanco", "hex": "#FFFFFF" }
       ],
       "category": "Sudadera",
-      "inStock": true,
+      "inStock": false,
       "mercadoPagoLink": "",
       "paypalEnabled": false
     },
@@ -400,7 +400,7 @@
       "reviewCount": 55,
       "colors": [],
       "category": "Termo",
-      "inStock": true,
+      "inStock": false,
       "mercadoPagoLink": "",
       "paypalEnabled": false
     },

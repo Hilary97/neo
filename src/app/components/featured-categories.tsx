@@ -10,7 +10,13 @@ interface FeaturedCardProps {
   index?: number;
 }
 
-function FeaturedCard({ title, description, imageUrl, href, index = 0 }: FeaturedCardProps) {
+function FeaturedCard({
+  title,
+  description,
+  imageUrl,
+  href,
+  index = 0,
+}: FeaturedCardProps) {
   return (
     <FloatingCard index={index}>
       <a
