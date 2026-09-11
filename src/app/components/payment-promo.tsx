@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FloatingCard } from "./floating-card";
 
 export function PaymentPromo() {
@@ -38,12 +39,12 @@ export function PaymentPromo() {
             </a>
 
             <div className="mt-8">
-              <a
+              <Link
                 href="/collections/shop-all"
                 className="font-condensed inline-block rounded-full bg-black px-14 py-3.5 text-sm font-semibold uppercase tracking-widest text-white transition-all hover:bg-zinc-800"
               >
                 Ver Descuentos
-              </a>
+              </Link>
             </div>
           </div>
         </FloatingCard>

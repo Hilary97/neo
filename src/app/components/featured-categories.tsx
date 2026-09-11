@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CATEGORIES, PRODUCTS } from "@/lib/products";
 import { FloatingCard } from "./floating-card";
 
@@ -19,7 +20,7 @@ function FeaturedCard({
 }: FeaturedCardProps) {
   return (
     <FloatingCard index={index}>
-      <a
+      <Link
         href={href}
         className="group relative block aspect-[4/5] overflow-hidden rounded-3xl bg-zinc-100 md:aspect-square"
       >
@@ -42,7 +43,7 @@ function FeaturedCard({
             Descubre más
           </span>
         </div>
-      </a>
+      </Link>
     </FloatingCard>
   );
 }
@@ -64,12 +65,12 @@ export function FeaturedCategories() {
                 <h2 className="font-heading text-4xl font-bold uppercase leading-none tracking-tight md:text-5xl">
                   {category.label}
                 </h2>
-                <a
+                <Link
                   href={`/collections/${category.slug}`}
                   className="font-condensed hidden text-sm font-semibold uppercase tracking-widest underline underline-offset-4 md:block"
                 >
                   Ver todo
-                </a>
+                </Link>
               </div>
 
               <div className="grid gap-5 md:grid-cols-2">
@@ -85,24 +86,24 @@ export function FeaturedCategories() {
                 ))}
               </div>
 
-              <a
+              <Link
                 href={`/collections/${category.slug}`}
                 className="font-condensed mt-5 inline-block text-sm font-semibold uppercase tracking-widest underline underline-offset-4 md:hidden"
               >
                 Ver todo {category.label}
-              </a>
+              </Link>
             </div>
           );
         })}
 
         {/* Shop All CTA */}
         <div className="mt-14 text-center">
-          <a
+          <Link
             href="/collections/shop-all"
             className="font-condensed inline-block rounded-full border-2 border-black px-16 py-3.5 text-sm font-semibold uppercase tracking-widest transition-all hover:bg-black hover:text-white"
           >
             Shop All
-          </a>
+          </Link>
         </div>
       </div>
     </section>
