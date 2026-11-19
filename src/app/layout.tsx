@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Oswald, Barlow_Condensed, Inter } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "@/app/components/cart-provider";
+import { SiteHeader } from "@/app/components/site-header";
+import { CartDrawer } from "@/app/components/cart-drawer";
+import { CartFloatingTrigger } from "@/app/components/cart-trigger";
+import { CATEGORIES } from "@/lib/products";
 
 const oswald = Oswald({
   variable: "--font-heading",
@@ -42,7 +47,14 @@ export default function RootLayout({
       lang="es"
       className={`${oswald.variable} ${barlowCondensed.variable} ${inter.variable}`}
     >
-      <body className="min-h-screen flex flex-col antialiased">{children}</body>
+      <body className="min-h-screen flex flex-col antialiased">
+        <CartProvider>
+          <SiteHeader categories={CATEGORIES} />
+          {children}
+          <CartDrawer />
+          <CartFloatingTrigger />
+        </CartProvider>
+      </body>
     </html>
   );
 }
