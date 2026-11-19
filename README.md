@@ -8,7 +8,7 @@ A fully responsive, data-driven e-commerce promotional landing page built for a 
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
 > <!-- TODO: add live deployment URL once published -->
-> **Live demo:** _https://neo-ashy-seven.vercel.app/_
+> **Live demo:** _https://neo-three-rho.vercel.app/_
 
 ---
 
