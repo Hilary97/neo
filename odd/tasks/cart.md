@@ -65,10 +65,13 @@ Estado: **6/6 tareas cerradas y verificadas**.
 
 ## Delivery
 
-Rama `feat/cart`, 6 commits sobre `main` (`a61bc48`, que ya incluye GSAP), ~1.430 líneas autoradas. Cada commit
+Rama `feat/cart`, 7 commits sobre `main` (`a61bc48`, que ya incluye GSAP), ~1.450 líneas autoradas. Cada commit
 es un slice revisable por separado (las fronteras están en la columna *Commit* de la tabla de Tasks). Publicar
-esto como un PR único supera la guía de ~400 líneas para proteger el foco de review: la forma de entrega (PR
-único o PRs encadenados) queda a decisión del usuario. No se hizo push ni se abrió PR.
+esto como un PR único supera la guía de ~400 líneas para proteger el foco de review.
+
+**Estado de entrega:** mergeado a `main` local por fast-forward (decisión del usuario, L9). **No se hizo push ni
+se abrió PR:** `main` local queda 8 commits adelante de `origin/main`. El deploy no existe todavía
+(`neo-ashy-seven.vercel.app` responde 404 `DEPLOYMENT_NOT_FOUND`).
 
 ## Log
 
@@ -105,3 +108,6 @@ más selector de color— se re-aplicó **dentro de `product-card-motion.tsx`**,
 `prefers-reduced-motion`. El estado local `selectedColor` se llama así para no chocar con el `color` del map.
 Al rebasar, el commit de lint de los `<a>` quedó obsoleto: `origin/main` ya los había arreglado, por lo que
 `npm run lint` ahora es verde sin errores previos.
+
+**L9** (decisión del usuario): mergear `feat/cart` en `main`. Se hizo por **fast-forward**, sin merge commit,
+porque la rama estaba exactamente encima de `main`.
