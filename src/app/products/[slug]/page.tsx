@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProductBadge } from "@/app/components/product-badge";
-import { ProductCTA } from "@/app/components/product-cta";
+import { ProductPurchase } from "@/app/components/product-purchase";
 import { Footer } from "@/app/components/footer";
 import { CATEGORIES, PRODUCTS, getDiscountPercent } from "@/lib/products";
 
@@ -114,34 +114,7 @@ export default async function ProductPage({
               )}
             </div>
 
-            {product.colors.length > 0 && (
-              <div>
-                <p className="font-condensed text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                  Colores
-                </p>
-                <div className="mt-2 flex items-center gap-2">
-                  {product.colors.map((color) => (
-                    <span
-                      key={color.name}
-                      className="flex items-center gap-1.5"
-                    >
-                      <span
-                        className="h-6 w-6 rounded-full border border-zinc-300"
-                        style={{ backgroundColor: color.hex }}
-                        aria-hidden
-                      />
-                      <span className="font-body text-sm text-zinc-600">
-                        {color.name}
-                      </span>
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <div className="mt-2 max-w-xs">
-              <ProductCTA product={product} className="py-3 text-sm" />
-            </div>
+            <ProductPurchase product={product} />
           </div>
         </div>
       </section>

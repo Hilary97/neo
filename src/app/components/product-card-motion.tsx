@@ -6,7 +6,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
 import { ProductBadge } from "./product-badge";
-import { ProductCTA } from "./product-cta";
+import { AddToCartButton } from "./add-to-cart-button";
 import type { Product } from "@/lib/products";
 
 gsap.registerPlugin(useGSAP);
@@ -21,6 +21,9 @@ export function ProductCardMotion({ product, index = 0 }: ProductCardMotionProps
   const surfaceRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const [imgIndex, setImgIndex] = useState(0);
+  const [selectedColor, setSelectedColor] = useState<string | null>(
+    product.colors[0]?.name ?? null,
+  );
 
   const hasSecondImage = product.images.length > 1;
   const hasDiscount =
@@ -304,15 +307,18 @@ export function ProductCardMotion({ product, index = 0 }: ProductCardMotionProps
             </div>
           )}
 
-          {/* Color Swatches on Image */}
+          {/* Color Swatches on Image (decorativo: el selector real está abajo) */}
           {product.colors.length > 0 && (
-            <div className="absolute bottom-3 left-3 z-10 flex gap-1.5">
-              {product.colors.map((color) => (
-                <button
-                  key={color.name}
-                  className="h-5 w-5 rounded-full border-2 border-white shadow-sm transition-transform motion-reduce:transition-none motion-safe:md:hover:scale-110"
-                  style={{ backgroundColor: color.hex }}
-                  aria-label={color.name}
+            <div
+              aria-hidden
+              className="absolute bottom-3 left-3 z-10 flex gap-1.5"
+            >
+              {product.colors.map((option) => (
+                <span
+                  key={option.name}
+                  className="h-5 w-5 rounded-full border-2 border-white shadow-sm"
+                  style={{ backgroundColor: option.hex }}
+                  title={option.name}
                 />
               ))}
             </div>
@@ -348,21 +354,37 @@ export function ProductCardMotion({ product, index = 0 }: ProductCardMotionProps
             )}
           </div>
 
-          {/* Colors */}
+          {/* Selector de color */}
           {product.colors.length > 0 && (
             <div className="mt-1 flex items-center gap-1">
-              {product.colors.map((color) => (
-                <button
-                  key={color.name}
-                  className="h-4 w-4 rounded-full border border-zinc-300"
-                  style={{ backgroundColor: color.hex }}
-                  aria-label={color.name}
-                />
-              ))}
+              {product.colors.map((option) => {
+                const selected = option.name === selectedColor;
+
+                return (
+                  <button
+                    key={option.name}
+                    type="button"
+                    onClick={() => setSelectedColor(option.name)}
+                    aria-pressed={selected}
+                    aria-label={`Color ${option.name}`}
+                    title={option.name}
+                    className={`h-4 w-4 rounded-full border transition-all ${
+                      selected
+                        ? "border-black ring-2 ring-black ring-offset-1"
+                        : "border-zinc-300 hover:border-zinc-500"
+                    }`}
+                    style={{ backgroundColor: option.hex }}
+                  />
+                );
+              })}
             </div>
           )}
 
-          <ProductCTA product={product} className="mt-2" />
+          <AddToCartButton
+            product={product}
+            color={selectedColor}
+            className="mt-2"
+          />
         </div>
       </div>
     </article>
