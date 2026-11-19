@@ -65,10 +65,10 @@ Estado: **6/6 tareas cerradas y verificadas**.
 
 ## Delivery
 
-Rama `feat/cart`, 6 commits, ~1.434 líneas autoradas. Cada commit es un slice revisable por separado
-(las fronteras están en la columna *Commit* de la tabla de Tasks). Publicar esto como un PR único
-supera la guía de ~400 líneas para proteger el foco de review: la forma de entrega (PR único o PRs
-encadenados) queda a decisión del usuario. No se hizo push ni se abrió PR.
+Rama `feat/cart`, 6 commits sobre `main` (`a61bc48`, que ya incluye GSAP), ~1.430 líneas autoradas. Cada commit
+es un slice revisable por separado (las fronteras están en la columna *Commit* de la tabla de Tasks). Publicar
+esto como un PR único supera la guía de ~400 líneas para proteger el foco de review: la forma de entrega (PR
+único o PRs encadenados) queda a decisión del usuario. No se hizo push ni se abrió PR.
 
 ## Log
 
@@ -96,3 +96,12 @@ archivos no tocados por esta feature); smoke contra `next start` — `/`, `/prod
 `/collections/shop-all` responden 200, ruta inexistente 404, el drawer no aparece en el HTML del server, las cards
 tienen `Agregar al carrito` y la página de producto conserva `Solicitar`. La corrección del lint
 `set-state-in-effect` se resolvió moviendo la hidratación a un store externo (`cart-store.ts`).
+
+**L8** (reconciliación con el remoto, agente): `origin/main` había avanzado con `8d63564 feat: add GSAP product
+card motion`, que extrajo el markup de la card a `product-card-motion.tsx` (370 líneas) y dejó `product-card.tsx`
+como wrapper de 11 líneas. `feat/cart` quedó sobre una base vieja, así que se rebasó sobre `main` (`a61bc48`):
+se salteó el commit `chore` (su contenido ya estaba en main) y la integración del carrito —`AddToCartButton`
+más selector de color— se re-aplicó **dentro de `product-card-motion.tsx`**, respetando las animaciones GSAP y
+`prefers-reduced-motion`. El estado local `selectedColor` se llama así para no chocar con el `color` del map.
+Al rebasar, el commit de lint de los `<a>` quedó obsoleto: `origin/main` ya los había arreglado, por lo que
+`npm run lint` ahora es verde sin errores previos.
