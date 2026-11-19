@@ -114,7 +114,13 @@ neo/
     │       ├── discount-tiers.tsx ← Escala de descuentos 15%/20%/25% + envío gratis
     │       ├── product-card.tsx ← Card de producto con hover, badges, precios
     │       ├── product-grid.tsx ← Grid responsive 2/3/4 cols con fadeUp
-    │       ├── product-cta.tsx  ← CTA de compra (MP / PayPal / WhatsApp)
+    │       ├── product-cta.tsx  ← Compra directa 1 ítem (MP / PayPal / WhatsApp), usada en la página de producto
+    │       ├── product-purchase.tsx ← Isla cliente de la página de producto (color + carrito + compra directa)
+    │       ├── add-to-cart-button.tsx ← Botón "Agregar al carrito"
+    │       ├── cart-provider.tsx ← CartProvider / useCart()
+    │       ├── cart-drawer.tsx  ← Drawer del carrito con checkout por WhatsApp
+    │       ├── cart-trigger.tsx ← Icono de carrito del header + botón flotante mobile
+    │       ├── site-header.tsx  ← Header sticky (logo, nav, carrito)
     │       ├── paypal-button.tsx ← Smart Button de PayPal (client-side)
     │       ├── floating-card.tsx ← Wrapper de profundidad/motion (Framer Motion)
     │       ├── featured-categories.tsx ← Hero cards por categoría (data-driven, ver CATEGORIES)
@@ -125,6 +131,8 @@ neo/
     │       └── footer.tsx       ← Footer negro con links y redes
     └── lib/
         ├── cn.ts                ← cn() utility (clsx + tailwind-merge)
+        ├── cart.ts              ← Lógica pura del carrito (testeada con node --test)
+        ├── cart-store.ts        ← Store externo + persistencia en localStorage
         └── products.ts          ← Tipos y datos importados de data/*.json
 ```
 
@@ -134,6 +142,7 @@ neo/
 - Fuentes: Oswald (headings), Barlow Condensed (nav), Inter (body) vía `next/font/google`
 - SEO: `metadata` export con title, description, open graph
 - Body con clases de font y scroll-smooth
+- Monta `CartProvider` > `SiteHeader` + `{children}` + `CartDrawer` + `CartFloatingTrigger`
 
 ### page.tsx
 Server Component. Orden de secciones activas actualmente:
@@ -221,10 +230,13 @@ sin backend propio ni Client Secret.
 - Moneda actual: MXN. Si el Sandbox tira `CURRENCY_NOT_SUPPORTED`, probar con USD.
 - No hay registro propio de la venta — el dashboard de PayPal es la fuente de verdad.
 
-### Regla de Prioridad: una sola opción de pago por card
+### Regla de Prioridad: una sola opción de compra por card
 
-Cada `ProductCard` muestra **un único CTA**, nunca varios al mismo tiempo. Prioridad
-(definida en `product-card.tsx`):
+Cada `ProductCard` muestra **un único CTA**: `Agregar al carrito` (`AddToCartButton`).
+El carrito es el camino de compra de la grilla.
+
+`ProductCTA` (vive en `product-cta.tsx`) **sigue existiendo** y se usa en la página de
+producto (`/products/[slug]`) para la compra directa de un solo ítem. Ahí la prioridad es:
 
 1. `mercadoPagoLink` presente → botón "Comprar" (checkout de Mercado Pago)
 2. Si no hay link de MP y `paypalEnabled: true` → botón de PayPal (Smart Buttons)
@@ -232,10 +244,43 @@ Cada `ProductCard` muestra **un único CTA**, nunca varios al mismo tiempo. Prio
 
 Para que un producto muestre PayPal, `mercadoPagoLink` debe estar vacío o ausente.
 
+## Carrito
+
+Carrito client-side, sin backend ni base de datos.
+
+| Pieza | Archivo | Rol |
+|---|---|---|
+| Lógica pura | `src/lib/cart.ts` | `addLine`, `setQuantity`, `removeLine`, subtotal, conteo, mensaje de WhatsApp, `parseCart` defensivo |
+| Store | `src/lib/cart-store.ts` | Store externo para `useSyncExternalStore` + persistencia en `localStorage` |
+| Context | `src/app/components/cart-provider.tsx` | `CartProvider` / `useCart()` |
+| UI | `cart-drawer.tsx`, `site-header.tsx`, `cart-trigger.tsx`, `add-to-cart-button.tsx`, `product-purchase.tsx` | Drawer, header sticky con contador, botón flotante mobile, botón de alta, isla de la página de producto |
+
+**Checkout:** no hay pasarela. El drawer arma **un** mensaje de WhatsApp con todos los ítems,
+cantidades, variantes y total (`buildWhatsAppMessage`), y el cliente coordina el pago en el chat.
+Un carrito vacío no genera pedido.
+
+**Por qué no Mercado Pago:** los `mercadoPagoLink` son *Links de Pago* por producto, creados a mano
+en el dashboard. Mercado Pago no consolida links, así que un carrito de N ítems no se puede cobrar
+con ellos. Cobrar el carrito requeriría un backend (Route Handler + `MP_ACCESS_TOKEN`) creando una
+preferencia de Checkout Pro. Por eso el carrito va por WhatsApp y la compra directa por MP quedó en
+la página de producto.
+
+**Persistencia:** clave `neo.cart.v1`, payload versionado. `parseCart` descarta JSON roto, versiones
+desconocidas y líneas mal formadas sin romper el render.
+
+**Reglas:** máximo 10 unidades por línea (merge por `productId` + color), 50 líneas, cantidades
+no finitas o ≤ 0 quitan la línea. Envío gratis desde $1,000 MXN: el mensaje lo declara como
+cumplido recién al alcanzar el umbral, nunca antes.
+
+**Tests:** `npm test` corre `node --test` sobre `src/lib/cart.test.ts` (sin framework extra; Node
+hace type-stripping nativo). Los tests cubren sólo la lógica pura — la UI se verifica con build + lint.
+
 ## Build
 
 - `npm run dev` para desarrollo con Turbopack
 - `npm run build` para build de producción (SSG/estático por página, sin `output: "export"` en `next.config.ts`)
+- `npm test` para la lógica del carrito (`node --test`, sin dependencias)
+- `npm run lint` (hoy falla por 2 `<a>` en `featured-categories.tsx` y `payment-promo.tsx`; deuda previa)
 
 ## Issues Conocidos / Gotchas
 
@@ -249,12 +294,12 @@ Para que un producto muestre PayPal, `mercadoPagoLink` debe estar vacío o ausen
 
 - [ ] Agregar más productos mock
 - [ ] Implementar filtros por categoría
-- [ ] Agregar carrito (Drawer/Sidebar)
-- [ ] Integrar API de Mercado Pago
+- [x] Agregar carrito (Drawer/Sidebar) — ver sección "Carrito"
+- [ ] Integrar API de Mercado Pago (requiere backend para Checkout Pro)
 - [x] Agregar animaciones con Framer Motion (`FloatingCard` — ver Design System)
 - [ ] Tests E2E con Playwright
-- [ ] Página de producto individual
-- [ ] Header sticky con navegación
+- [x] Página de producto individual
+- [x] Header sticky con navegación
 - [ ] Responsive refinements
 - [ ] SEO: sitemap, robots.txt, metadata dinámica
 <!-- END:neo-project-context -->
